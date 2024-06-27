@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 
 function UpdateUser() {
   const { id } = useParams();
@@ -9,7 +9,8 @@ function UpdateUser() {
     ISBN: "",
     rating: "",
   });
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,17 +53,17 @@ function UpdateUser() {
 
   return (
     <div className="w-1/3 shadow mx-auto my-32">
-      <form onSubmit={handleSubmit} class="space-y-6 px-12 py-6 ">
-        <legend class="text-2xl ">General information</legend>
+      <form onSubmit={handleSubmit} className="space-y-6 px-12 py-6 ">
+        <legend className="text-2xl ">General information</legend>
         <div>
-          <label for="" class="block px-2 text-gray-400">
+          <label  className="block px-2 text-gray-400">
             Title
           </label>
           <select
             name="title"
             id=""
             onChange={handleChange}
-            class="outline-none border-b border-gray-200 w-[100%]"
+            className="outline-none border-b border-gray-200 w-[100%]"
             required
           >
             <option value=""></option>
@@ -71,39 +72,39 @@ function UpdateUser() {
             <option value="Executive Officer">Executive Officer</option>
           </select>
         </div>
-        <div class="flex gap-3">
+        <div className="flex gap-3">
           <div>
-            <label for="" class="block px-2 text-gray-400">
+            <label  className="block px-2 text-gray-400">
               FirstName
             </label>
             <input
               type="text"
               name="firstName"
               onChange={handleChange}
-              class="border-b w-[100%] border-gray-200 outline-none focus:outline-none ps-4"
+              className="border-b w-[100%] border-gray-200 outline-none focus:outline-none ps-4"
             />
           </div>
           <div>
-            <label for="" class="block px-2 text-gray-400">
+            <label  className="block px-2 text-gray-400">
               LastName
             </label>
             <input
               type="text"
               onChange={handleChange}
               name="lastName"
-              class="border-b border-gray-200 outline-none focus:outline-none ps-4"
+              className="border-b border-gray-200 outline-none focus:outline-none ps-4"
             />
           </div>
         </div>
         <div>
-          <label for="" class="block px-2 text-gray-400">
+          <label  className="block px-2 text-gray-400">
             Position
           </label>
           <select
             name="position"
             onChange={handleChange}
             id=""
-            class="outline-none border-b border-gray-200 w-[100%]"
+            className="outline-none border-b border-gray-200 w-[100%]"
           >
             <option value=""></option>
             <option value="Senior">Senior</option>
@@ -111,37 +112,37 @@ function UpdateUser() {
           </select>
         </div>
         <div>
-          <label for="" class="block px-2 text-gray-400">
+          <label  className="block px-2 text-gray-400">
             Company
           </label>
           <input
             type="text"
             name="company"
             onChange={handleChange}
-            class="border-b border-gray-200 outline-none focus:outline-none ps-4 w-[100%]"
+            className="border-b border-gray-200 outline-none focus:outline-none ps-4 w-[100%]"
           />
         </div>
-        <div class="flex gap-12">
+        <div className="flex gap-12">
           <div>
-            <label for="" class="block px-2 text-gray-400">
+            <label  className="block px-2 text-gray-400">
               Business Arena
             </label>
             <input
               type="text"
               onChange={handleChange}
               name="businessArena"
-              class="border-b w-[100%] border-gray-200 outline-none focus:outline-none ps-4"
+              className="border-b w-[100%] border-gray-200 outline-none focus:outline-none ps-4"
             />
           </div>
           <div>
-            <label for="" class="block px-2 text-gray-400">
+            <label  className="block px-2 text-gray-400">
               Employees
             </label>
             <select
               name="employees"
               id=""
               onChange={handleChange}
-              class="outline-none border-b border-gray-200 w-[100%]"
+              className="outline-none border-b border-gray-200 w-[100%]"
             >
               <option value=""></option>
               <option value="5">5</option>

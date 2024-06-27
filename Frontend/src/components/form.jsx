@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Form() {
   const [userData, setUserData] = useState({
@@ -18,6 +18,9 @@ function Form() {
     });
   };
 
+
+  console.log(userData);
+
   const handleSubmit1 = (e) => {
     e.preventDefault();
 
@@ -35,7 +38,7 @@ function Form() {
 
         console.log("Saved successfully");
       })
-      .catch((err) => {
+      .catch(() => {
         console.log("Error in saving the record.");
       });
   };
@@ -75,7 +78,7 @@ function Form() {
         console.log("Saved successfully");
       })
       .catch((err) => {
-        console.log("Error in saving the record.");
+        console.log("Error in saving the record.", err);
       });
   };
 
@@ -115,19 +118,19 @@ function Form() {
   return (
     <div>
       <div className="flex justify-center p-12">
-        <div class="flex md:flex-row flex-col justify-between  rounded bg-white space-y-32 md:space-y-0 shadow">
+        <div className="flex md:flex-row flex-col justify-between  rounded bg-white space-y-32 md:space-y-0 shadow">
           <div>
-            <form onSubmit={handleSubmit1} class="space-y-6 px-12 py-6 ">
-              <legend class="text-2xl ">General information</legend>
+            <form onSubmit={handleSubmit1} className="space-y-6 px-12 py-6 ">
+              <legend className="text-2xl ">General information</legend>
               <div>
-                <label for="" class="block px-2 text-gray-400">
+                <label  className="block px-2 text-gray-400">
                   Title
                 </label>
                 <select
                   name="title"
                   id=""
                   onChange={handleChange}
-                  class="outline-none border-b border-gray-200 w-[100%]"
+                  className="outline-none border-b border-gray-200 w-[100%]"
                   required
                 >
                   <option value=""></option>
@@ -136,39 +139,39 @@ function Form() {
                   <option value="Executive Officer">Executive Officer</option>
                 </select>
               </div>
-              <div class="flex gap-3">
+              <div className="flex gap-3">
                 <div>
-                  <label for="" class="block px-2 text-gray-400">
+                  <label  className="block px-2 text-gray-400">
                     FirstName
                   </label>
                   <input
                     type="text"
                     name="firstName"
                     onChange={handleChange}
-                    class="border-b w-[100%] border-gray-200 outline-none focus:outline-none ps-4"
+                    className="border-b w-[100%] border-gray-200 outline-none focus:outline-none ps-4"
                   />
                 </div>
                 <div>
-                  <label for="" class="block px-2 text-gray-400">
+                  <label  className="block px-2 text-gray-400">
                     LastName
                   </label>
                   <input
                     type="text"
                     onChange={handleChange}
                     name="lastName"
-                    class="border-b border-gray-200 outline-none focus:outline-none ps-4"
+                    className="border-b border-gray-200 outline-none focus:outline-none ps-4"
                   />
                 </div>
               </div>
               <div>
-                <label for="" class="block px-2 text-gray-400">
+                <label  className="block px-2 text-gray-400">
                   Position
                 </label>
                 <select
                   name="position"
                   onChange={handleChange}
                   id=""
-                  class="outline-none border-b border-gray-200 w-[100%]"
+                  className="outline-none border-b border-gray-200 w-[100%]"
                 >
                   <option value=""></option>
                   <option value="Senior">Senior</option>
@@ -176,37 +179,37 @@ function Form() {
                 </select>
               </div>
               <div>
-                <label for="" class="block px-2 text-gray-400">
+                <label  className="block px-2 text-gray-400">
                   Company
                 </label>
                 <input
                   type="text"
                   name="company"
                   onChange={handleChange}
-                  class="border-b border-gray-200 outline-none focus:outline-none ps-4 w-[100%]"
+                  className="border-b border-gray-200 outline-none focus:outline-none ps-4 w-[100%]"
                 />
               </div>
-              <div class="flex gap-12">
+              <div className="flex gap-12">
                 <div>
-                  <label for="" class="block px-2 text-gray-400">
+                  <label  className="block px-2 text-gray-400">
                     Business Arena
                   </label>
                   <input
                     type="text"
                     onChange={handleChange}
                     name="businessArena"
-                    class="border-b w-[100%] border-gray-200 outline-none focus:outline-none ps-4"
+                    className="border-b w-[100%] border-gray-200 outline-none focus:outline-none ps-4"
                   />
                 </div>
                 <div>
-                  <label for="" class="block px-2 text-gray-400">
+                  <label  className="block px-2 text-gray-400">
                     Employees
                   </label>
                   <select
                     name="employees"
                     id=""
                     onChange={handleChange}
-                    class="outline-none border-b border-gray-200 w-[100%]"
+                    className="outline-none border-b border-gray-200 w-[100%]"
                   >
                     <option value=""></option>
                     <option value="5">5</option>
@@ -225,52 +228,52 @@ function Form() {
           <div>
             <form
               onSubmit={handleSubmit2}
-              class="space-y-6 px-16 py-6 bg-[#ba03fc] text-white"
+              className="space-y-6 px-16 py-6 bg-[#ba03fc] text-white"
             >
-              <legend class="text-2xl ">Contacts Details</legend>
+              <legend className="text-2xl ">Contacts Details</legend>
               <div>
-                <label for="" class="block px-2">
+                <label  className="block px-2">
                   Street * Nr
                 </label>
                 <input
                   onChange={handleChange2}
                   type="text"
                   name="streetNumber"
-                  class=" border-b border-white outline-none focus:outline-none ps-4 w-[100%] rounded bg-[#ba03fc]"
+                  className=" border-b border-white outline-none focus:outline-none ps-4 w-[100%] rounded bg-[#ba03fc]"
                 />
               </div>
               <div>
-                <label for="" class="block px-2">
+                <label  className="block px-2">
                   Additional Information
                 </label>
                 <input
                   onChange={handleChange2}
                   type="text"
                   name="additionalInfo"
-                  class=" border-b border-white outline-none focus:outline-none ps-4 w-[100%] rounded bg-[#ba03fc]"
+                  className=" border-b border-white outline-none focus:outline-none ps-4 w-[100%] rounded bg-[#ba03fc]"
                 />
               </div>
-              <div class="flex gap-3">
+              <div className="flex gap-3">
                 <div>
-                  <label for="" class="block px-2">
+                  <label  className="block px-2">
                     Zip Code
                   </label>
                   <input
                     onChange={handleChange2}
                     type="text"
                     name="zipCode"
-                    class="  border-b w-[50%] border-white outline-none focus:outline-none ps-4 rounded bg-[#ba03fc]"
+                    className="  border-b w-[50%] border-white outline-none focus:outline-none ps-4 rounded bg-[#ba03fc]"
                   />
                 </div>
                 <div>
-                  <label for="" class="block">
+                  <label  className="block">
                     Place
                   </label>
                   <select
                     onChange={handleChange2}
                     name="place"
                     id=""
-                    class="  outline-none border-b border-white w-[100%] px-12 rounded bg-[#ba03fc]"
+                    className="  outline-none border-b border-white w-[100%] px-12 rounded bg-[#ba03fc]"
                   >
                     <option value=""></option>
                     <option value="Mukmira">Mukamira</option>
@@ -279,63 +282,63 @@ function Form() {
                 </div>
               </div>
               <div>
-                <label for="" class="block px-2">
+                <label  className="block px-2">
                   Country
                 </label>
                 <select
                   onChange={handleChange2}
                   name="country"
                   id=""
-                  class="  outline-none border-b border-white w-[100%] rounded bg-[#ba03fc]"
+                  className="  outline-none border-b border-white w-[100%] rounded bg-[#ba03fc]"
                 >
                   <option value=""></option>
                   <option value="Rwanda">Rwanda</option>
                   <option value="Uganda">Uganda</option>
                 </select>
               </div>
-              <div class="flex gap-3">
+              <div className="flex gap-3">
                 <div>
-                  <label for="" class="block px-2">
+                  <label  className="block px-2">
                     Code+
                   </label>
                   <input
                     onChange={handleChange2}
                     type="text"
                     name="code"
-                    class="  border-b w-[50%] border-white outline-none focus:outline-none ps-4 rounded bg-[#ba03fc]"
+                    className="  border-b w-[50%] border-white outline-none focus:outline-none ps-4 rounded bg-[#ba03fc]"
                   />
                 </div>
                 <div>
-                  <label for="" class="block">
+                  <label  className="block">
                     Phone Number
                   </label>
                   <input
                     onChange={handleChange2}
                     type="tel"
                     name="phoneNumber"
-                    class="  border-b w-[100%] border-white outline-none focus:outline-none ps-4 rounded bg-[#ba03fc]"
+                    className="  border-b w-[100%] border-white outline-none focus:outline-none ps-4 rounded bg-[#ba03fc]"
                   />
                 </div>
               </div>
               <div>
-                <label for="" class="block">
+                <label  className="block">
                   Email
                 </label>
                 <input
                   onChange={handleChange2}
                   type="email"
                   name="email"
-                  class="  border-b w-[100%] border-white outline-none focus:outline-none ps-4 rounded bg-[#ba03fc]"
+                  className="  border-b w-[100%] border-white outline-none focus:outline-none ps-4 rounded bg-[#ba03fc]"
                 />
               </div>
               <div>
                 <input type="checkbox" name="" id="" />
-                <label for="" class="">
+                <label  className="">
                   I do accept <a href="#">The terms and conditions</a> of your
                   site
                 </label>
               </div>
-              <button class="bg-white rounded-xl text-black px-4 py-1 shadow hover:bg-purple-400 hover:text-white">
+              <button className="bg-white rounded-xl text-black px-4 py-1 shadow hover:bg-purple-400 hover:text-white">
                 Register Badge
               </button>
             </form>

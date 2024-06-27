@@ -9,7 +9,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect('mongodb://localhost:27017/Exam')
+mongoose.connect('mongodb://127.0.0.1:27017/Exam')
     .then(() => {
         console.log('Connected to DB');
     })
@@ -54,6 +54,7 @@ app.get('/all', (req, res) => {
             res.status(500).json({ message: 'User not found' })
         })
 })
+
 
 
 app.delete('/delete/:id', (req, res) => {
